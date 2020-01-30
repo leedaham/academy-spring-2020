@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.sql_movie">
+	
+	<insert id="INSERT_MOVIE">
+		INSERT INTO `JC_MOVIE` SET 
+		`movie_title`=#{movie_title}, 
+		`movie_grade`=#{movie_grade}, 
+		`movie_company`=#{movie_company}, 
+		`movie_release_date`=#{movie_release_date}, 
+		`movie_genre`=#{movie_genre}, 
+		`movie_country`=#{movie_country}, 
+		`movie_running_time`=#{movie_running_time}, 
+		`movie_homepage`=#{movie_homepage}, 
+		`movie_poster`=#{movie_poster}, 
+		`movie_desc`=#{movie_desc}, 
+		`movie_director`=#{movie_director}, 
+		`movie_actor`=#{movie_actor};
+	</insert>
+	
+	<select id="SELECT_MOVIES" resultType="kr.co.jcinema.admin.vo.AdminMovieVo">
+		SELECT * FROM `JC_MOVIE` WHERE `movie_title` LIKE CONCAT('%',#{title},'%');		
+	</select>
+	
+	<insert id="INSERT_MOVIE_SCHEDULE">
+		INSERT INTO `JC_MOVIE_SCHEDULE` SET
+		schedule_theater_no=#{schedule_theater_no},
+		schedule_screen_no=#{schedule_screen_no},
+		schedule_movie_no=#{schedule_movie_no},
+		schedule_date=#{schedule_date},
+		schedule_start_time=#{schedule_start_time},
+		schedule_end_time=#{schedule_end_time},
+		schedule_round_view=#{schedule_round_view};
+	</insert>
+</mapper>
