@@ -32,4 +32,13 @@
 		schedule_end_time=#{schedule_end_time},
 		schedule_round_view=#{schedule_round_view};
 	</insert>
+	
+	<select id="SELECT_MOVIE_SCHEDULE" resultType="kr.co.jcinema.admin.vo.AdminMovieScheduleVo">
+		SELECT a.*, b.movie_title FROM `JC_MOVIE_SCHEDULE` AS a 
+		JOIN `JC_MOVIE` AS b ON a.schedule_movie_no = b.movie_no 
+		WHERE a.schedule_theater_no=#{schedule_theater_no}
+		AND a.schedule_screen_no=#{schedule_screen_no}
+		AND a.schedule_date=#{schedule_date}
+		AND a.schedule_round_view=#{schedule_round_view};
+	</select>
 </mapper>

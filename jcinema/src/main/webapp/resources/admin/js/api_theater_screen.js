@@ -74,16 +74,18 @@ $(function(){
 		var round_view 		= $('select[name=round_view]').val();
 		
 		
-		var json = {'theater_no': theater_no, 
-				    'screen_no': screen_no, 
+		var json = {'schedule_theater_no': theater_no, 
+				    'schedule_screen_no': screen_no, 
 				    'schedule_date': schedule_date,
-				    'round_view':round_view};
+				    'schedule_round_view':round_view};
 
 		
-		var url = "/jcinema/admin/api/movie-schedule";
+		var url = "/jcinema/api/movie-schedule";
 		
 		
-		$.post(url, json, function(data){
+		$.get(url, json, function(data){
+			
+			var data = JSON.parse(data);
 			
 			$('input[name=movie_no]').val(data.schedule_movie_no);
 			$('input[name=movie_title]').val(data.movie_title);

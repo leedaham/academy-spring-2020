@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import kr.co.jcinema.admin.vo.AdminMovieScheduleVo;
 import kr.co.jcinema.admin.vo.AdminMovieVo;
 import kr.co.jcinema.api.service.ApiService;
 import kr.co.jcinema.api.vo.ApiTheaterVo;
@@ -36,4 +37,12 @@ public class ApiController {
 		
 		return new Gson().toJson(movies);
 	}
+	@GetMapping(value="/api/movie-schedule", produces="text/plain;charset=UTF-8")
+	@ResponseBody
+	public String getMovieSchedule(AdminMovieScheduleVo vo) {
+		AdminMovieScheduleVo movieSchedule = service.selectMovieSchedule(vo);
+		return new Gson().toJson(movieSchedule);
+	}
+	
+	
 }

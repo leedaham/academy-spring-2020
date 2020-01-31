@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
+import kr.co.jcinema.admin.vo.AdminMovieScheduleVo;
 import kr.co.jcinema.admin.vo.AdminMovieVo;
 import kr.co.jcinema.api.vo.ApiTheaterVo;
 
@@ -48,5 +49,9 @@ public class ApiDao {
 	public List<AdminMovieVo> selectMovies(String title) {
 		
 		return mybatis.selectList("mapper.sql_movie.SELECT_MOVIES", title);
+	}
+	
+	public AdminMovieScheduleVo selectMovieSchedule(AdminMovieScheduleVo vo) {
+		return mybatis.selectOne("mapper.sql_movie.SELECT_MOVIE_SCHEDULE", vo);
 	}
 }

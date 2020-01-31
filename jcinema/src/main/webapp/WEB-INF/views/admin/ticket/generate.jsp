@@ -1,8 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%@include file="../_header.jsp"%>
+<%@ include file="../_header.jsp" %>
+<script src="/jcinema/admin/js/api_theater_screen.js"></script>
 <div>
     <div class="container">
-        <%@include file="../_aside.jsp"%>
+        <%@ include file="../_aside.jsp" %>
         <section id="sub" class="ticket-generate">
 
             <nav>
@@ -11,7 +12,10 @@
             </nav>
                                 
             <article>
-                <form action="#">
+                <form action="/jcinema/admin/ticket/generate" method="post">
+                	<input type="hidden" name="theater_no" />
+        			<input type="hidden" name="screen_no" />
+        			
                     <div class="field">
                         <label for="theater_city">영화관</label>
                         <select name="theater_city" id="theater_city">
@@ -28,14 +32,7 @@
 
                         <select name="theater_name" id="theater_name">
                             <option>영화관 선택</option>
-                            <option>광복</option>
-                            <option>김해부원</option>
-                            <option>대영</option>
-                            <option>동래</option>
-                            <option>동부산 아울렛</option>
-                            <option>서면(전포동)</option>
-                            <option>센텀시티</option>
-                            <option>오투(부산대)</option>
+                            <option value="103">광복</option>
                         </select>
                     </div>
                     <div class="field">
@@ -67,7 +64,8 @@
                     </div>
                     <div class="field">
                         <label for="movie_no">영화</label>
-                        <input type="text" name="movie_title">
+                        <input type="hidden" name="movie_no" readonly="readonly" />
+                		<input type="text" name="movie_title" readonly="readonly" />
                     </div>
                     
                     <div class="field">
@@ -90,4 +88,4 @@
         </section>
     </div>
 </div>
-<%@include file="../_footer.jsp"%>
+<%@ include file="../_footer.jsp" %>

@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.co.jcinema.admin.vo.AdminMovieScheduleVo;
 import kr.co.jcinema.admin.vo.AdminMovieVo;
 import kr.co.jcinema.api.dao.ApiDao;
 import kr.co.jcinema.api.vo.ApiTheaterVo;
@@ -32,5 +33,8 @@ public class ApiService {
 	public List<AdminMovieVo> selectMovies(String title) {
 		
 		return dao.selectMovies(title);
+	}
+	public AdminMovieScheduleVo selectMovieSchedule(AdminMovieScheduleVo vo) {
+		return dao.selectMovieSchedule(vo);
 	}
 }
