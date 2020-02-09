@@ -2,7 +2,7 @@
 
 ### 📆 *2019.01 - 2020.02*
 
-📘 최범균*,* **[『초보 웹 개발자를 위한 스프링5 프로그래밍 입문』](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=157472828)**, 가메출판사
+📘 최범균, **[『초보 웹 개발자를 위한 스프링5 프로그래밍 입문』](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=157472828)**, 가메출판사
 
 # English
 
